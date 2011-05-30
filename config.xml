@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	id		= "com.bluebear.software"
+	id		= "com.bluebear.lockpuzzle"
 	version 	= "1.0.0">
 
-	<name>Blue Bear Software</name>
+	<name>Lock Puzzle</name>
 
 	<description>
-		Business card
+		Simple lock puzzle
 	</description>
 
 	<author href="http://www.bluebearsoftware.co.uk"
@@ -28,8 +28,10 @@
 
 	<gap:splash src="splash.png" />
 
+	<!--
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
 	<feature name="http://api.phonegap.com/1.0/network"/>
+	-->
 	<feature name="http://api.phonegap.com/1.0/notification"/>
 
 	<!-- sample preference specification -->
