@@ -8,10 +8,6 @@
 
 	<script src="assets/js/phonegap.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
-	<script src="assets/js/lawnchair/adaptors/LawnchairAdaptorHelpers.js" type="text/javascript" charset="utf-8"></script>
-	<script src="assets/js/lawnchair/adaptors/DOMStorageAdaptor.js" type="text/javascript" charset="utf-8"></script>
-	<script src="assets/js/lawnchair/adaptors/WebkitSQLiteAdaptor.js" type="text/javascript" charset="utf-8"></script>
-	<script src="assets/js/lawnchair/Lawnchair.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -20,7 +16,6 @@
 
 	<div id="welcome" class="view">
 		<div class="app_button" id="play_button">Play</div>
-		<div class="app_button" id="settings_button">Settings</div>
 		<div class="app_button" id="deviceInfo_button">Help</div>
 	</div>
 
@@ -57,27 +52,6 @@
 			</div>
 		</div>
 		<button id="home_button">Home</button>
-	</div>
-
-	<div id="settings" class="view">
-		<form id="settings_form">
-			<fieldset>
-				<legend>Map Type</legend>
-				<input type="radio" name="map" value="roadmap" checked>Road Map<br/>
-				<input type="radio" name="map" value="satellite">Satellite<br/>
-				<input type="radio" name="map" value="terrain">Terrain<br/>
-				<input type="radio" name="map" value="hybrid">Hybrid<br/>
-			</fieldset>
-			<fieldset>
-				<legend>Zoom Level</legend>
-				<input type="radio" name="zoom" value="10">Super Far<br/>
-				<input type="radio" name="zoom" value="12">Far<br/>
-				<input type="radio" name="zoom" value="15" checked>Normal<br/>
-				<input type="radio" name="zoom" value="18">Close<br/>
-				<input type="radio" name="zoom" value="20">Super Close<br/>
-			</fieldset>
-			<button id="save_button">Save</button>
-		</form>
 	</div>
 
 	<div id="deviceInfo" class="view">

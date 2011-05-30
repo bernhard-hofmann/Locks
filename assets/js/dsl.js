@@ -9,9 +9,6 @@ var run = function(application) {
 	}
 }
 
-// throw our settings into a lawnchair
-, store = new Lawnchair({adaptor:'dom'})
-
 // shows id passed
 , display = function(id) {
     x$(["#welcome", "#map", "#settings", "#deviceInfo"]).each(function(e, i) {
@@ -28,7 +25,7 @@ var run = function(application) {
     }
 
     x$(id + '_button').on(activity, function () {
-		navigator.notification.vibrate(25);
+		navigator.notification.vibrate(30);
         if (x$(id).length > 0) {
             display(id);
 		} else {
@@ -40,13 +37,4 @@ var run = function(application) {
 		return false;
     });
 }
-
-// gets the value of the setting from the ui
-, ui = function(setting) {
-    var i, l, radio = x$('#settings_form')[0][setting];
-    for (i = 0, l = radio.length; i < l; i++) {
-        if (radio[i].checked) {
-            return radio[i].value;
-		}
-    }
-};
+;
