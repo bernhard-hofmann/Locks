@@ -1,6 +1,6 @@
 // the app method accepts a fn to invoke on init unobtrusively 
 var run = function(application) {
-    if (navigator.userAgent.indexOf('Browzr') > -1) {
+    if ((navigator.userAgent.indexOf('Browzr') > -1) || navigator.platform === 'Win32') {
         // blackberry
         setTimeout(application, 250);
     } else {
@@ -9,9 +9,11 @@ var run = function(application) {
 	}
 }
 
+, isReady = false
+
 // shows id passed
 , display = function(id) {
-    x$(["#welcome", "#map", "#settings", "#deviceInfo"]).each(function(e, i) {
+    x$(["#welcome", "#play", "#deviceInfo"]).each(function(e, i) {
         var display = '#' + x$(e)[0].id === id ? 'block' : 'none';
         x$(e).css({ 'display':display });
     });
@@ -25,11 +27,13 @@ var run = function(application) {
     }
 
     x$(id + '_button').on(activity, function () {
-		navigator.notification.vibrate(30);
+		if (navigator && navigator.notification && navigator.notification.vibrate) {
+			navigator.notification.vibrate(30);
+		}
         if (x$(id).length > 0) {
             display(id);
 		} else {
-			alert('There is no element with ID "'+ id +'" to display as a result of the click on "'+ id +'_button".');
+			//alert('There is no element with ID "'+ id +'" to display as a result of the click on "'+ id +'_button".');
 		}
         if (callback) {
             callback.call(this);

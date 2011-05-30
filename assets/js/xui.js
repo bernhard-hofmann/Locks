@@ -493,6 +493,7 @@
     
     // lifted from Prototype's (big P) event model
     function _getEventID(element) {
+		if (element === null) debugger;
         if (element._xuiEventID) return element._xuiEventID[0];
         return element._xuiEventID = [++_getEventID.id];
     }

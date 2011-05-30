@@ -1,5 +1,11 @@
 // Reset all locks
-x$('.lock').addClass('rotate0');
+function resetLocks() {
+	x$('.lock').removeClass('rotate90');
+	x$('.lock').removeClass('rotate0');
+	x$('.lock').addClass('rotate0');
+	x$('.lock').addClass('rotate0');
+};
+resetLocks();
 
 // Define a function to toggle a lock
 function toggle(lock) {
