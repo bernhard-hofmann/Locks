@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
+	<title>Lock Puzzle</title>
+	<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="assets/css/locks.css" type="text/css" media="screen" />
+
+	<script src="assets/js/phonegap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/lawnchair/adaptors/LawnchairAdaptorHelpers.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/lawnchair/adaptors/DOMStorageAdaptor.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/lawnchair/adaptors/WebkitSQLiteAdaptor.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/lawnchair/Lawnchair.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="title_bar">Lock Puzzle</div>
+
+	<div id="welcome" class="view">
+		<div class="app_button" id="play_button">Play</div>
+		<div class="app_button" id="settings_button">Settings</div>
+		<div class="app_button" id="deviceInfo_button">Help</div>
+	</div>
+
+	<div id="play" class="view">
+		<div id="gameboard">
+			<div id="game">
+				<table border="2">
+					<tr>
+						<td><div id="Cell_1_1" class="lock" row="1" col="1">|</div></td>
+						<td><div id="Cell_1_2" class="lock" row="1" col="2">|</div></td>
+						<td><div id="Cell_1_3" class="lock" row="1" col="3">|</div></td>
+						<td><div id="Cell_1_4" class="lock" row="1" col="4">|</div></td>
+					</tr>
+					<tr>
+						<td><div id="Cell_2_1" class="lock" row="2" col="1">|</div></td>
+						<td><div id="Cell_2_2" class="lock" row="2" col="2">|</div></td>
+						<td><div id="Cell_2_3" class="lock" row="2" col="3">|</div></td>
+						<td><div id="Cell_2_4" class="lock" row="2" col="4">|</div></td>
+					</tr>
+					<tr>
+						<td><div id="Cell_3_1" class="lock" row="3" col="1">|</div></td>
+						<td><div id="Cell_3_2" class="lock" row="3" col="2">|</div></td>
+						<td><div id="Cell_3_3" class="lock" row="3" col="3">|</div></td>
+						<td><div id="Cell_3_4" class="lock" row="3" col="4">|</div></td>
+					</tr>
+					<tr>
+						<td><div id="cell_4_1" class="lock" row="4" col="1">|</div></td>
+						<td><div id="cell_4_2" class="lock" row="4" col="2">|</div></td>
+						<td><div id="cell_4_3" class="lock" row="4" col="3">|</div></td>
+						<td><div id="cell_4_4" class="lock" row="4" col="4">|</div></td>
+					</tr>
+				</table>
+				<h1 id="result"></h1>
+			</div>
+		</div>
+		<button id="home_button">Home</button>
+	</div>
+
+	<div id="settings" class="view">
+		<form id="settings_form">
+			<fieldset>
+				<legend>Map Type</legend>
+				<input type="radio" name="map" value="roadmap" checked>Road Map<br/>
+				<input type="radio" name="map" value="satellite">Satellite<br/>
+				<input type="radio" name="map" value="terrain">Terrain<br/>
+				<input type="radio" name="map" value="hybrid">Hybrid<br/>
+			</fieldset>
+			<fieldset>
+				<legend>Zoom Level</legend>
+				<input type="radio" name="zoom" value="10">Super Far<br/>
+				<input type="radio" name="zoom" value="12">Far<br/>
+				<input type="radio" name="zoom" value="15" checked>Normal<br/>
+				<input type="radio" name="zoom" value="18">Close<br/>
+				<input type="radio" name="zoom" value="20">Super Close<br/>
+			</fieldset>
+			<button id="save_button">Save</button>
+		</form>
+	</div>
+
+	<div id="deviceInfo" class="view">
+		<h1>Click the locks to toggle them.<br/>Try get them all vertical</h1>
+		<p>As you click a lock, all the locks in the same row and column will toggle position. Get all the locks vertical to complete the puzzle.</p>
+		<hr/>
+		<p id="deviceDetails">Retrieving device details...</p>
+		<p id="geolocation">Finding geolocation...</p>
+		<p id="libraries"Built with Phonegap, xuijs and lawnchair.</p>
+		<button id="home_button">Home</button>
+	</div>
+
+	<script src="assets/js/locks.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

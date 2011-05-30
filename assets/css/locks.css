@@ -1,0 +1,49 @@
+#gameboard {
+    width:100%;
+}
+#game {
+    margin-right:auto;
+    margin-left:auto;
+    width:300px;
+}
+h1 {
+    font-family:Verdana,Tahoma,Sans-Serif;
+    font-size:14pt;
+    font-weight:bold;
+    text-align:center;
+}
+.rotate90
+{
+    background-color: #ff0;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -transition: all 1s ease-in-out;
+
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -transform: rotate(90deg);
+}
+.rotate0
+{
+    background-color: #ff0;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -transition: all 1s ease-in-out;
+
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -transform: rotate(0deg);
+}
+td
+{
+    height: 75px;
+    width: 75px;
+    background: #000;
+}
+.lock
+{
+    width: 75px;
+    height: 20px;
+    text-align:center;
+    cursor:pointer;
+}
