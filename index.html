@@ -5,14 +5,16 @@
 	<title>Lock Puzzle</title>
 	<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="assets/css/locks.css" type="text/css" media="screen" />
+
+	<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 	<div id="title_bar">Lock Puzzle</div>
 
-
 	<div id="welcome" class="view">
-		<div class="app_button" id="play_button">Play</div>
-		<div class="app_button" id="deviceInfo_button">Help</div>
+		<div class="app_button" id="play_button" onclick="display('#play');">Play</div>
+		<div class="app_button" id="deviceInfo_button" onclick="display('#deviceInfo');">Help</div>
 	</div>
 
 	<div id="play" class="view">
@@ -47,20 +49,19 @@
 				<h1 id="result"></h1>
 			</div>
 		</div>
-		<button class="home_button">Home</button>
-		<button id="reset">Reset</button>
+		<button class="home_button" onclick="display('#welcome');">Home</button>
+		<button id="reset" onclick="resetLocks();">Reset</button>
 	</div>
 
 	<div id="deviceInfo" class="view">
 		<h1>Click the locks to toggle them.<br/>Try get them all vertical</h1>
 		<p>As you click a lock, all the locks in the same row and column will toggle position. Get all the locks vertical to complete the puzzle.</p>
 		<hr/>
-		<p id="deviceDetails">Retrieving device details...</p>
-		<p id="geolocation">Finding geolocation...</p>
-		<p id="libraries"Built with Phonegap, xuijs and lawnchair.</p>
+		<p id="libraries"Built with xui js.</p>
 		<button class="home_button">Home</button>
 	</div>
 
+	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/locks.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
