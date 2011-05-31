@@ -1,4 +1,3 @@
-run(function () {
     var activity = 'click';
     if ('ontouchstart' in document.documentElement) {
         activity = 'touchstart';

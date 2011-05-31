@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns		= "http://www.w3.org/ns/widgets"
-	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	id		= "com.bluebear.lockpuzzle"
-	version 	= "1.0.0">
-
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.bluebear.lockpuzzle" version="1.0.1">
 	<name>Lock Puzzle</name>
 
 	<description>
 		Simple lock puzzle
 	</description>
 
-	<author href="http://www.bluebearsoftware.co.uk"
-		email="admin@bluebearsoftware.co.uk">
-		Bernhard Hofmann
-	</author>
+	<author href="http://www.bluebearsoftware.co.uk" email="admin@bluebearsoftware.co.uk">Bernhard Hofmann</author>
 
 	<gap:platforms>
 		<gap:platform name="android" minVersion="2.1" />
