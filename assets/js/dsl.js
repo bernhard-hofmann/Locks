@@ -23,8 +23,7 @@ var run = function(application) {
 , when = function(id, callback) {
     var activity = 'click';
     if ('ontouchstart' in document.documentElement) {
-		alert('Cool - we can use touchstart.');
-        activity = 'touchstart';
+       activity = 'touchstart';
     }
 
     x$(id + '_button').on(activity, function () {
