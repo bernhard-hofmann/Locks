@@ -11,9 +11,9 @@ h1 {
 }
 .rotate90
 {
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -transition: all 1s ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -transition: all 200ms ease-in-out;
 
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
@@ -21,9 +21,10 @@ h1 {
 }
 .rotate0
 {
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -transition: all 1s ease-in-out;
+
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -transition: all 200ms ease-in-out;
 
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
