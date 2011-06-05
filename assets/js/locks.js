@@ -53,17 +53,17 @@ function toggle(lock) {
 }
 
 function alertDismissed() {
-	resetLocks();
+	resetLocks('fourLocks');
 }
 
 function showWon() {
+	toggles += 1;
 	if (typeof(navigator) !== "undefined" && typeof(navigator.notification) !== "undefined") {
 		navigator.notification.alert('Well done!', alertDismissed, 'You did it!', 'Reset');
 	} else {
 		alert('Well done! You did it!');
+		resetLocks('fourLocks');
 	}
-	toggles += 1;
-	resetLocks('fourLocks');
 }
 
 function checkIfWon() {
