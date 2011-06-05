@@ -1,10 +1,18 @@
+var withToggles = true;
+
 // Reset all locks
 function resetLocks() {
+	x$('#game.threeLocks').css({'display':'none'});
+	x$('#game.fourLocks').css({'display':'none'});
+
 	x$('.lock').removeClass('rotate90');
 	x$('.lock').removeClass('rotate0');
 	x$('.lock').addClass('rotate0');
 	x$('.lock').addClass('rotate0');
 	x$('.lock').css({'background-color':'#fff'});
+
+	boardClass = 'threeLocks';
+	x$('#game.threeLocks').css({'display':'block'});
 };
 resetLocks();
 
@@ -29,11 +37,14 @@ function showWon() {
 	} else {
 		alert('Well done! You did it!');
 		resetLocks();
+		boardClass = 'fourLocks';
+		x$('#game.threeLocks').css({'display':'none'});
+		x$('#game.fourLocks').css({'display':'block'});
 	}
 }
 
 function checkIfWon() {
-    if (x$('.rotate0').length == 0) {
+    if (x$('.'+ boardClass +'.rotate0').length == 0) {
         x$('.rotate90').css({'background-color':'#0f0'});
 		setTimeout(showWon, 100);
     }
