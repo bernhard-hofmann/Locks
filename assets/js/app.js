@@ -16,7 +16,7 @@ function display(id) {
     });
 }
 
-function onDeviceReady() {
+function initApp() {
 	var activity = 'click';
 	if ('ontouchstart' in document.documentElement) {
 		activity = 'touchstart';
@@ -37,10 +37,6 @@ function onDeviceReady() {
 	document.addEventListener("menubutton", onMenuKeyDown, false);
 	document.addEventListener("searchbutton", onSearchKeyDown, false);
 	display('#info');
-}
-
-function onLoad() {
-	document.addEventListener("deviceready", onDeviceReady, false);
 }
 /*
 document.addEventListener("backbutton", onBackKeyDown, false);

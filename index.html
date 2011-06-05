@@ -8,6 +8,16 @@
 
 	<script src="assets/js/phonegap.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+	function onLoad() {
+		document.addEventListener("deviceready", onDeviceReady, false);
+	}
+
+	function onDeviceReady() {
+		console.log('PhoneGap device is ready. :)');
+		initApp();
+	}
+	</script>
 </head>
 <body onload="onLoad()">
 	<div id="title_bar">Lock Puzzle</div>

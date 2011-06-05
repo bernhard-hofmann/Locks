@@ -300,7 +300,7 @@ PhoneGap.onDeviceReady = new PhoneGap.Channel('onDeviceReady');
 
 
 // Array of channels that must fire before "deviceready" is fired
-PhoneGap.deviceReadyChannelsArray = [ PhoneGap.onPhoneGapReady, PhoneGap.onPhoneGapInfoReady, PhoneGap.onPhoneGapConnectionReady];
+PhoneGap.deviceReadyChannelsArray = [ PhoneGap.onPhoneGapReady, PhoneGap.onPhoneGapInfoReady];
 
 // Hashtable of user defined channels that must also fire before "deviceready" is fired
 PhoneGap.deviceReadyChannelsMap = {};
