@@ -39,7 +39,9 @@ function onDeviceReady() {
 	display('#info');
 }
 
-document.addEventListener("deviceready", onDeviceReady, false);
+function onLoad() {
+	document.addEventListener("deviceready", onDeviceReady, false);
+}
 /*
 document.addEventListener("backbutton", onBackKeyDown, false);
 document.addEventListener("menubutton", onMenuKeyDown, false);
