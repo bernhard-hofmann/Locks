@@ -25,26 +25,31 @@ function alertDismissed() {
 
 function checkIfWon() {
     if (x$('.rotate0').length == 0) {
-		navigator.notification.alert('Well done!', alertDismissed, 'You did it!', 'Reset');
         x$('.rotate90').css({'background-color':'#0f0'});
+		navigator.notification.alert('Well done!', alertDismissed, 'You did it!', 'Reset');
     }
 }
 
 // Define click handler
-x$('.lock').click(function() {
-    var cellid = this.id;
-    // Identify the row and column
-    var row = x$(this).attr('row');
-    var col = x$(this).attr('col');
-    // Toggle every cell in the row, and every cell in the column
-    x$('.lock[row="' + row + '"]').each(function() {
-        toggle(x$(this));
-    });
-    x$('.lock[col="' + col + '"]').each(function() {
-        toggle(x$(this));
-    });
-    // Toggle the cell clicked as well
-    toggle(x$(this));
-    
-    checkIfWon();
+var activity = 'click';
+if ('ontouchstart' in document.documentElement) {
+	activity = 'touchstart';
+};
+x$('.lock').on(activity, function() {
+	var cellid = this.id;
+	// Identify the row and column
+	var row = x$(this).attr('row');
+	var col = x$(this).attr('col');
+	// Toggle every cell in the row, and every cell in the column
+	x$('.lock[row="' + row + '"]').each(function() {
+		toggle(x$(this));
+	});
+	x$('.lock[col="' + col + '"]').each(function() {
+		toggle(x$(this));
+	});
+	// Toggle the cell clicked as well
+	toggle(x$(this));
+
+	// Allow the browser some time to animate the CSS
+	setTimeout(checkIfWon, 500);
 });
