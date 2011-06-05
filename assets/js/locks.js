@@ -4,7 +4,6 @@ function resetLocks() {
 	x$('.lock').removeClass('rotate0');
 	x$('.lock').addClass('rotate0');
 	x$('.lock').addClass('rotate0');
-	x$('#result').html('');
 	x$('.lock').css({'background-color':'#fff'});
 };
 resetLocks();
@@ -20,9 +19,13 @@ function toggle(lock) {
     }
 }
 
+function alertDismissed() {
+	resetLocks();
+}
+
 function checkIfWon() {
     if (x$('.rotate0').length == 0) {
-        x$('#result').html('You did it!');
+		navigator.notification.alert('Well done!', alertDismissed, 'You did it!', 'Reset');
         x$('.rotate90').css({'background-color':'#0f0'});
     }
 }
