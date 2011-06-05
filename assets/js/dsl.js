@@ -13,7 +13,7 @@ var run = function(application) {
 
 // shows id passed
 , display = function(id) {
-    x$(["#welcome", "#play", "#deviceInfo"]).each(function(e, i) {
+    x$('.view').each(function(e, i) {
         var display = '#' + x$(e)[0].id === id ? 'block' : 'none';
         x$(e).css({ 'display':display });
     });
