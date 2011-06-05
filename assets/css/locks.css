@@ -23,9 +23,9 @@ td {
 td.threeLocks {height:75px;width:75px;}
 .lock.threeLocks{width:75px;height:20px;}
 
-#game.fourLocks{width:286px;display:none;}
-td.fourLocks{height:65px;width:65px;}
-.lock.fourLocks{width:65px;height:15px;}
+#game.fourLocks{width:246px;display:none;}
+td.fourLocks{height:55px;width:55px;}
+.lock.fourLocks{width:55px;height:15px;}
 
 .rotate90
 {
