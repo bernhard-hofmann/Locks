@@ -1,4 +1,8 @@
-var withToggles = true;
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var toggles = 0;
 
 // Reset all locks
 function resetLocks(a) {
@@ -15,6 +19,23 @@ function resetLocks(a) {
 	x$('.lock').addClass('rotate0');
 	x$('.lock').addClass('rotate0');
 	x$('.lock').css({'background-color':'#fff'});
+
+	var row, col, i;
+	for (i=1; i<toggles; i++) {
+		row = getRandomInt(1,4);
+		col = getRandomInt(1,4);
+
+		console.log('Toggling row '+ row +' col '+ col);
+		x$('.lock[row="' + row + '"]').each(function() {
+			toggle(x$(this));
+		});
+		x$('.lock[col="' + col + '"]').each(function() {
+			toggle(x$(this));
+		});
+		x$('.lock[row="' + row + '"][col="' + col + '"]').each(function() {
+			toggle(x$(this));
+		});
+	}
 
 	x$('#game.'+boardClass).css({'display':'block'});
 };
@@ -40,8 +61,9 @@ function showWon() {
 		navigator.notification.alert('Well done!', alertDismissed, 'You did it!', 'Reset');
 	} else {
 		alert('Well done! You did it!');
-		resetLocks('fourLocks');
 	}
+	toggles += 1;
+	resetLocks('fourLocks');
 }
 
 function checkIfWon() {
