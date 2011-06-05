@@ -1,37 +1,44 @@
-run(myApp);
-
-function myApp() {
-	// immediately invoked on first run
-	var init = (function () {
-		// a little inline controller
-		//when('#welcome');
-		when('#play', function () {
-			display('#play');
-		});
-		when('#deviceInfo', function () {
-			display('#deviceInfo');
-		});
-		var activity = 'click';
-		if ('ontouchstart' in document.documentElement) {
-			activity = 'touchstart';
-		};
-		x$('#reset').on(activity, function() {
-			resetLocks();
-		});
-
-		document.addEventListener("menubutton", onMenuKeyDown, false);
-		document.addEventListener("searchbutton", onSearchKeyDown, false);
-	})();
-
-	function phoneGapReady() {
-	};
-	function onMenuKeyDown() {
-		display('#welcome');
-	}
-	function onSearchKeyDown() {
-		display('#deviceInfo');
+function bizt() {
+	if (navigator && navigator.notification && navigator.notification.vibrate) {
+		navigator.notification.vibrate(30);
 	}
 }
+function onMenuKeyDown() {
+	display('#welcome');
+}
+function onSearchKeyDown() {
+	display('#deviceInfo');
+}
+function display(id) {
+    x$('.view').each(function(e, i) {
+        var display = '#' + x$(e)[0].id === id ? 'block' : 'none';
+        x$(e).css({ 'display':display });
+    });
+}
+
+function onDeviceReady() {
+	var activity = 'click';
+	if ('ontouchstart' in document.documentElement) {
+		activity = 'touchstart';
+	};
+
+	// a little inline controller
+	//when('#welcome');
+	when('#play', function () {
+		display('#play');
+	});
+	when('#deviceInfo', function () {
+		display('#deviceInfo');
+	});
+	x$('#reset').on(activity, function() {
+		resetLocks();
+	});
+
+	document.addEventListener("menubutton", onMenuKeyDown, false);
+	document.addEventListener("searchbutton", onSearchKeyDown, false);
+}
+
+document.addEventListener("deviceready", onDeviceReady, false);
 /*
 document.addEventListener("backbutton", onBackKeyDown, false);
 document.addEventListener("menubutton", onMenuKeyDown, false);
