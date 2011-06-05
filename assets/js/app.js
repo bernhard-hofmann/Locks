@@ -4,10 +4,10 @@ function bizt() {
 	}
 }
 function onMenuKeyDown() {
-	display('#welcome');
+	display('#play');
 }
 function onSearchKeyDown() {
-	display('#deviceInfo');
+	display('#info');
 }
 function display(id) {
     x$('.view').each(function(e, i) {
@@ -22,20 +22,21 @@ function onDeviceReady() {
 		activity = 'touchstart';
 	};
 
-	// a little inline controller
-	//when('#welcome');
-	when('#play', function () {
+	/*
+	x$('#play').on(activity, function () {
 		display('#play');
 	});
-	when('#deviceInfo', function () {
-		display('#deviceInfo');
+	x$('#info').on(activity, function () {
+		display('#info');
 	});
+	*/
 	x$('#reset').on(activity, function() {
 		resetLocks();
 	});
 
 	document.addEventListener("menubutton", onMenuKeyDown, false);
 	document.addEventListener("searchbutton", onSearchKeyDown, false);
+	display('#info');
 }
 
 document.addEventListener("deviceready", onDeviceReady, false);

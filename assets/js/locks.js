@@ -43,6 +43,7 @@ function checkIfWon() {
 var activity = 'click';
 if ('ontouchstart' in document.documentElement) {
 	activity = 'touchstart';
+	console.log('Cool, touchstart is supported.');
 };
 x$('.lock').on(activity, function() {
 	var cellid = this.id;
