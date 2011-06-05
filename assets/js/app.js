@@ -10,6 +10,7 @@ function onSearchKeyDown() {
 	display('#info');
 }
 function display(id) {
+	bizt();
     x$('.view').each(function(e, i) {
         var display = '#' + x$(e)[0].id === id ? 'block' : 'none';
         x$(e).css({ 'display':display });
