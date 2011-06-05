@@ -4,7 +4,7 @@ function bizt() {
 	}
 }
 function onMenuKeyDown() {
-	display('#play');
+	display('#menu');
 }
 function onSearchKeyDown() {
 	display('#info');
@@ -22,21 +22,39 @@ function initApp() {
 		activity = 'touchstart';
 	};
 
-	/*
-	x$('#play').on(activity, function () {
+	if (typeof(device) !== "undefined") {
+		x$('#phoneGapVersion').html('version '+ device.phonegap);
+		var element = document.getElementById('deviceProperties');
+		if (element) {
+			element.innerHTML =
+				'Device Name: '     + device.name     + '<br />' + 
+				'Device PhoneGap: ' + device.phonegap + '<br />' + 
+				'Device Platform: ' + device.platform + '<br />' + 
+				'Device UUID: '     + device.uuid     + '<br />' + 
+				'Device Version: '  + device.version  + '<br />';
+		}
+	}
+
+	x$('#btnPlay').on(activity, function () {
 		display('#play');
 	});
-	x$('#info').on(activity, function () {
+	x$('#btnAbout').on(activity, function () {
 		display('#info');
 	});
-	*/
-	x$('#reset').on(activity, function() {
+	x$('#infoToHome').on(activity, function () {
+		display('#menu');
+	});
+
+	x$('#btnPlayToMenu').on(activity, function() {
+		display('#menu');
+	});
+	x$('#btnReset').on(activity, function() {
 		resetLocks();
+		display('#play');
 	});
 
 	document.addEventListener("menubutton", onMenuKeyDown, false);
 	document.addEventListener("searchbutton", onSearchKeyDown, false);
-	display('#info');
 }
 /*
 document.addEventListener("backbutton", onBackKeyDown, false);
