@@ -27,11 +27,10 @@ function initApp() {
 		var element = document.getElementById('deviceProperties');
 		if (element) {
 			element.innerHTML =
-				'Device Name: '     + device.name     + '<br />' + 
-				'Device PhoneGap: ' + device.phonegap + '<br />' + 
-				'Device Platform: ' + device.platform + '<br />' + 
-				'Device UUID: '     + device.uuid     + '<br />' + 
-				'Device Version: '  + device.version  + '<br />';
+				'Device: '     + device.name     + '<br />' + 
+				'Running: ' + device.platform +' v'+ device.version + '<br />' + 
+				'UUID: '     + device.uuid     + '<br />'
+				;
 		}
 	}
 
