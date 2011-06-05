@@ -1,7 +1,12 @@
 var withToggles = true;
 
 // Reset all locks
-function resetLocks() {
+function resetLocks(a) {
+	if (!a) {
+		boardClass = 'threeLocks';
+	} else {
+		boardClass = a;
+	}
 	x$('#game.threeLocks').css({'display':'none'});
 	x$('#game.fourLocks').css({'display':'none'});
 
@@ -11,8 +16,7 @@ function resetLocks() {
 	x$('.lock').addClass('rotate0');
 	x$('.lock').css({'background-color':'#fff'});
 
-	boardClass = 'threeLocks';
-	x$('#game.threeLocks').css({'display':'block'});
+	x$('#game.'+boardClass).css({'display':'block'});
 };
 resetLocks();
 
@@ -36,10 +40,7 @@ function showWon() {
 		navigator.notification.alert('Well done!', alertDismissed, 'You did it!', 'Reset');
 	} else {
 		alert('Well done! You did it!');
-		resetLocks();
-		boardClass = 'fourLocks';
-		x$('#game.threeLocks').css({'display':'none'});
-		x$('#game.fourLocks').css({'display':'block'});
+		resetLocks('fourLocks');
 	}
 }
 
