@@ -5,22 +5,12 @@ h1 {
 	text-align:center;
 }
 
-#game {
-	margin-left:auto;
-	margin-right:auto;
-}
-td {
-	background: #4C606B;
-}
-.lock {
-	background-color: #fff;
-	text-align:center;
-	cursor:pointer;
-}
+#game{margin-left:auto;margin-right:auto;}
+td{background: #4C606B;}
+.lock{background-color: #fff;text-align:center;cursor:pointer;}
 
-
-#game.threeLocks {width:245px;}
-td.threeLocks {height:75px;width:75px;}
+#game.threeLocks{width:245px;}
+td.threeLocks{height:75px;width:75px;}
 .lock.threeLocks{width:75px;height:20px;}
 
 #game.fourLocks{width:246px;display:none;}
