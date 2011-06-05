@@ -23,10 +23,19 @@ function alertDismissed() {
 	resetLocks();
 }
 
+function showWon() {
+	if (typeof(navigator) !== "undefined" && typeof(navigator.notification) !== "undefined") {
+		navigator.notification.alert('Well done!', alertDismissed, 'You did it!', 'Reset');
+	} else {
+		alert('Well done! You did it!');
+		resetLocks();
+	}
+}
+
 function checkIfWon() {
     if (x$('.rotate0').length == 0) {
         x$('.rotate90').css({'background-color':'#0f0'});
-		navigator.notification.alert('Well done!', alertDismissed, 'You did it!', 'Reset');
+		setTimeout(showWon, 1000);		
     }
 }
 
@@ -50,6 +59,5 @@ x$('.lock').on(activity, function() {
 	// Toggle the cell clicked as well
 	toggle(x$(this));
 
-	// Allow the browser some time to animate the CSS
-	setTimeout(checkIfWon, 500);
+	checkIfWon();
 });
