@@ -35,7 +35,7 @@ function showWon() {
 function checkIfWon() {
     if (x$('.rotate0').length == 0) {
         x$('.rotate90').css({'background-color':'#0f0'});
-		setTimeout(showWon, 1000);		
+		setTimeout(showWon, 100);
     }
 }
 
