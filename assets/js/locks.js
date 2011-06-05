@@ -4,6 +4,8 @@ function resetLocks() {
 	x$('.lock').removeClass('rotate0');
 	x$('.lock').addClass('rotate0');
 	x$('.lock').addClass('rotate0');
+	x$('#result').html('');
+	x$('.lock').css({'background-color':'#fff'});
 };
 resetLocks();
 

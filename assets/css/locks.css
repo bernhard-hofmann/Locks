@@ -1,10 +1,5 @@
-#gameboard {
-    width:100%;
-}
 #game {
-    margin-right:auto;
-    margin-left:auto;
-    width:300px;
+    width:245px;
 }
 h1 {
     font-family:Verdana,Tahoma,Sans-Serif;
