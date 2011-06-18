@@ -1,6 +1,6 @@
 function bizt() {
 	if (navigator && navigator.notification && navigator.notification.vibrate) {
-		navigator.notification.vibrate(30);
+		//navigator.notification.vibrate(30);
 	}
 }
 function onMenuKeyDown() {
@@ -49,7 +49,8 @@ function initApp() {
 		display('#menu');
 	});
 	x$('#btnReset').on(activity, function() {
-		resetLocks();
+		GAME.reset();
+		GAME.resetLocks();
 		display('#play');
 	});
 

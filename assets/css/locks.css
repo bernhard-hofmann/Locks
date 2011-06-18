@@ -20,11 +20,11 @@ td.fourLocks{height:55px;width:55px;}
 .rotate90
 {
 /* These transitions are sticky and slow on my HTC Wildfire. TODO: Make it a user-setting to enable animation. */
-/*
+/**/
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
     -transition: all 200ms ease-in-out;
-*/
+/**/
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -transform: rotate(90deg);
@@ -32,11 +32,11 @@ td.fourLocks{height:55px;width:55px;}
 .rotate0
 {
 /* These transitions are sticky and slow on my HTC Wildfire. TODO: Make it a user-setting to enable animation. */
-/*
+/**/
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
     -transition: all 200ms ease-in-out;
-*/
+/**/
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -transform: rotate(0deg);
