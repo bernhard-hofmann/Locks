@@ -8,25 +8,35 @@ var UTIL = (function(my) {
 
 var GAME = (function (my) { 
 	my.toggles = 0;
+	my.animate = function() {
+		var isAnimated = (window.localStorage.getItem("animate") === "true");
+		return isAnimated;
+	};
 
 	my.resetLocks = function(a) {
 		var row, col, i;
 		if (!a) {
-			boardClass = 'threeLocks';
+			GAME.boardClass = 'threeLocks';
 		} else {
-			boardClass = a;
+			GAME.boardClass = a;
 		}
 		x$('#game.threeLocks').css({'display':'none'});
 		x$('#game.fourLocks').css({'display':'none'});
 
-		x$('.lock').removeClass('rotate90');
-		x$('.lock').removeClass('rotate0');
-		x$('.lock').addClass('rotate0');
-		x$('.lock').addClass('rotate0');
 		x$('.lock').css({'background-color':'#fff'});
+		x$('.lock').removeClass('rotate90');
+		x$('.lock').removeClass('rotate90animated');
+		x$('.lock').removeClass('rotate0');
+		x$('.lock').removeClass('rotate0animated');
+
+		var zeroClass = 'rotate0';
+		if (GAME.animate()) {
+			zeroClass = 'rotate0animated';
+		}
+		x$('.lock').addClass(zeroClass);
 
 		for (i=1; i<GAME.toggles; i++) {
-			if (boardClass === 'threeLocks') {
+			if (GAME.boardClass === 'threeLocks') {
 				row = UTIL.getRandomInt(1,3);
 				col = UTIL.getRandomInt(1,3);
 			} else {
@@ -46,16 +56,23 @@ var GAME = (function (my) {
 			});
 		}
 
-		x$('#game.'+boardClass).css({'display':'block'});
+		x$('#game.'+ GAME.boardClass).css({'display':'block'});
 	};
 
 	my.toggle = function(lock) {
-		if (lock.hasClass('rotate90')) {
-			lock.removeClass('rotate90');
-			lock.addClass('rotate0');
+		var zeroClass = 'rotate0';
+		var ninetyClass = 'rotate90';
+		if (GAME.animate()) {
+			zeroClass = 'rotate0animated';
+			ninetyClass = 'rotate90animated';
+		}
+
+		if (lock.hasClass(ninetyClass)) {
+			lock.removeClass(ninetyClass);
+			lock.addClass(zeroClass);
 		} else {
-			lock.removeClass('rotate0');
-			lock.addClass('rotate90');
+			lock.removeClass(zeroClass);
+			lock.addClass(ninetyClass);
 		}
 	}
 
@@ -74,7 +91,11 @@ var GAME = (function (my) {
 	};
 
 	my.checkIfWon = function() {
-		if (x$('.'+ boardClass +'.rotate0').length == 0) {
+		var classText = '.'+ GAME.boardClass +'.rotate0';
+		if (GAME.animate()) {
+			classText += 'animated';
+		}
+		if (x$(classText).length === 0) {
 			x$('.rotate90').css({'background-color':'#0f0'});
 			setTimeout(GAME.showWon, 100);
 		}

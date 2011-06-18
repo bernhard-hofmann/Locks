@@ -17,6 +17,13 @@ function display(id) {
     });
 }
 
+function loadOptions() {
+	x$('#animatedLocks')[0].checked = (window.localStorage.getItem("animate") === "true");
+}
+function saveOptions() {
+	window.localStorage.setItem("animate", x$('#animatedLocks')[0].checked);
+}
+
 function initApp() {
 	var activity = 'click';
 	if ('ontouchstart' in document.documentElement) {
@@ -38,6 +45,10 @@ function initApp() {
 	x$('#btnPlay').on(activity, function () {
 		display('#play');
 	});
+	x$('#btnOptions').on(activity, function () {
+		loadOptions();
+		display('#options');
+	});
 	x$('#btnAbout').on(activity, function () {
 		display('#info');
 	});
@@ -52,6 +63,14 @@ function initApp() {
 		GAME.reset();
 		GAME.resetLocks();
 		display('#play');
+	});
+
+	x$('#btnSaveOptions').on(activity, function() {
+		saveOptions();
+		display('#menu');
+	});
+	x$('#btnCancelOptions').on(activity, function() {
+		display('#menu');
 	});
 
 	document.addEventListener("menubutton", onMenuKeyDown, false);
