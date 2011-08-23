@@ -7,11 +7,7 @@
 	<link rel="stylesheet" href="assets/css/locks.css" type="text/css" media="screen" />
 
 	<script src="assets/js/phonegap.js" type="text/javascript" charset="utf-8"></script>
-
-	<link rel="stylesheet" href="assets/css/jQueryMobile/jqueryMobileMin.css" />
-	<script type="text/javascript" src="assets/js/jqueryMin.js"></script>
-	<script type="text/javascript" src="assets/js/jqueryMobileMin.js">
-
+	<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 	function onLoad() {
 		document.addEventListener("deviceready", onDeviceReady, false);
@@ -24,23 +20,22 @@
 	}
 	
 	function giveupOnPhoneGap() {
-		console.warn('PhoneGap device not ready. Initializing regardless... :(');
+		console.warn('PhoneGap device not ready. :(');
 		initApp();
 	}
 	</script>
 </head>
 <body onload="onLoad()">
-	<div id="menu" data-role="page">
-		<div data-role="header">Lock Puzzle</div>
+	<div id="title_bar">Lock Puzzle</div>
 
-		<a data-role="button" data-transition="none" href="#play">Play</a>
-		<!-- <a data-role="button" data-transition="none" href="#options">Settings</a> -->
-		<!-- <a data-role="button" data-transition="none" href="#" id="btnReset">Reset</a> -->
-		<a data-role="button" data-transition="none" href="#info">About</a>
+	<div id="menu" class="view">
+		<button id="btnPlay">Play</button>
+		<button id="btnOptions">Settings</button>
+		<button id="btnReset">Reset</button>
+		<button id="btnAbout">About</button>
 	</div>
 
-	<div id="play" data-role="page">
-		<div data-role="content">
+	<div id="play" class="view">
 		<div id="gameboard">
 			<div id="game" class="threeLocks">
 				<table border="2">
@@ -90,31 +85,32 @@
 				</table>
 			</div>
 		</div>
-		</div>
+		<button id="btnPlayToMenu">Menu</button>
 	</div>
 
-	<div id="options" data-role="page">
+	<div id="options" class="view">
 		<form>
 			<label for="animatedLocks">Animate locks</label>
 			<input type="checkbox" name="animatedLocks" id="animatedLocks">
 		</form>
+		<button id="btnSaveOptions">Save</button>
+		<button id="btnCancelOptions">Cancel</button>
 	</div>
 
-	<div id="info" data-role="page" style="background:white;color:#234;">
-		<div data-role="Content">
-			<h1>Try get all the locks vertical</h1>
-			<div style="text-align:justify">
-				<p>When you tap a lock, all the locks in the same row and column will toggle position. Get all the locks vertical to complete the puzzle.</p>
-				<p>Future versions will encorporate levels when difficulty increases by number of locks, and high scores for time to complete and how many moves you use to complete the puzzle.</p>
-			</div>
-			<hr noshade />
-			<p id="libraries">Built by Bernhard Hofmann<br/>
-				<img src="splash.png"><br/>
-				with <a href="http://www.phonegap.com/">PhoneGap</a> <span id="phoneGapVersion"></span><br/>
-				and <a href="http://jquerymobile.com/">jQuery Mobile</a>
-			</p>
-			<p id="deviceProperties" style="text-align:left;"></p>
+	<div id="info" class="view" style="background:white;color:#234;">
+		<h1>Try get all the locks vertical</h1>
+		<div style="text-align:justify">
+			<p>When you tap a lock, all the locks in the same row and column will toggle position. Get all the locks vertical to complete the puzzle.</p>
+			<p>Future versions will encorporate levels when difficulty increases by number of locks, and high scores for time to complete and how many moves you use to complete the puzzle.</p>
 		</div>
+		<hr noshade />
+		<p id="libraries">Built by Bernhard Hofmann<br/>
+			<img src="splash.png"><br/>
+			with <a href="http://www.phonegap.com/">PhoneGap</a> <span id="phoneGapVersion"></span><br/>
+			and <a href="http://xuijs.com/">xui js</a>.
+		</p>
+		<p id="deviceProperties" style="text-align:left;"></p>
+		<button id="infoToHome">Menu</button>
 	</div>
 
 	<script src="assets/js/locks.js" type="text/javascript" charset="utf-8"></script>

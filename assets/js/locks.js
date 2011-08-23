@@ -20,20 +20,20 @@ var GAME = (function (my) {
 		} else {
 			GAME.boardClass = a;
 		}
-		x$('#game.threeLocks').css({'display':'none'});
-		x$('#game.fourLocks').css({'display':'none'});
+		$('#game.threeLocks').css({'display':'none'});
+		$('#game.fourLocks').css({'display':'none'});
 
-		x$('.lock').css({'background-color':'#fff'});
-		x$('.lock').removeClass('rotate90');
-		x$('.lock').removeClass('rotate90animated');
-		x$('.lock').removeClass('rotate0');
-		x$('.lock').removeClass('rotate0animated');
+		$('.lock').css({'background-color':'#fff'});
+		$('.lock').removeClass('rotate90');
+		$('.lock').removeClass('rotate90animated');
+		$('.lock').removeClass('rotate0');
+		$('.lock').removeClass('rotate0animated');
 
 		var zeroClass = 'rotate0';
 		if (GAME.animate()) {
 			zeroClass = 'rotate0animated';
 		}
-		x$('.lock').addClass(zeroClass);
+		$('.lock').addClass(zeroClass);
 
 		for (i=1; i<GAME.toggles; i++) {
 			if (GAME.boardClass === 'threeLocks') {
@@ -45,18 +45,18 @@ var GAME = (function (my) {
 			}
 
 			console.log('Toggling row '+ row +' col '+ col);
-			x$('.lock[row="' + row + '"]').each(function() {
-				GAME.toggle(x$(this));
+			$('.lock[row="' + row + '"]').each(function() {
+				GAME.toggle($(this));
 			});
-			x$('.lock[col="' + col + '"]').each(function() {
-				GAME.toggle(x$(this));
+			$('.lock[col="' + col + '"]').each(function() {
+				GAME.toggle($(this));
 			});
-			x$('.lock[row="' + row + '"][col="' + col + '"]').each(function() {
-				GAME.toggle(x$(this));
+			$('.lock[row="' + row + '"][col="' + col + '"]').each(function() {
+				GAME.toggle($(this));
 			});
 		}
 
-		x$('#game.'+ GAME.boardClass).css({'display':'block'});
+		$('#game.'+ GAME.boardClass).css({'display':'block'});
 	};
 
 	my.toggle = function(lock) {
@@ -95,8 +95,8 @@ var GAME = (function (my) {
 		if (GAME.animate()) {
 			classText += 'animated';
 		}
-		if (x$(classText).length === 0) {
-			x$('.rotate90').css({'background-color':'#0f0'});
+		if ($(classText).length === 0) {
+			$('.rotate90').css({'background-color':'#0f0'});
 			setTimeout(GAME.showWon, 100);
 		}
 	};
@@ -119,20 +119,20 @@ var GAME = (function (my) {
 GAME.resetLocks();
 
 
-x$('.lock').on(GAME.activity, function() {
+$('.lock').bind(GAME.activity, function() {
 	var cellid = this.id;
 	// Identify the row and column
-	var row = x$(this).attr('row');
-	var col = x$(this).attr('col');
+	var row = $(this).attr('row');
+	var col = $(this).attr('col');
 	// Toggle every cell in the row, and every cell in the column
-	x$('.lock[row="' + row + '"]').each(function() {
-		GAME.toggle(x$(this));
+	$('.lock[row="' + row + '"]').each(function() {
+		GAME.toggle($(this));
 	});
-	x$('.lock[col="' + col + '"]').each(function() {
-		GAME.toggle(x$(this));
+	$('.lock[col="' + col + '"]').each(function() {
+		GAME.toggle($(this));
 	});
 	// Toggle the cell clicked as well
-	GAME.toggle(x$(this));
+	GAME.toggle($(this));
 
 	GAME.checkIfWon();
 });

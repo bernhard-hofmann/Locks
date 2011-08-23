@@ -1,27 +1,19 @@
 function bizt() {
 	if (navigator && navigator.notification && navigator.notification.vibrate) {
-		//navigator.notification.vibrate(30);
+		navigator.notification.vibrate(30);
 	}
 }
 function onMenuKeyDown() {
-	display('#menu');
+	$.mobile.changePage( "menu", { transition: "none"} );
 }
 function onSearchKeyDown() {
-	display('#info');
+	$.mobile.changePage( "info", { transition: "none"} );
 }
-function display(id) {
-	bizt();
-    x$('.view').each(function(e, i) {
-        var display = '#' + x$(e)[0].id === id ? 'block' : 'none';
-        x$(e).css({ 'display':display });
-    });
-}
-
 function loadOptions() {
-	x$('#animatedLocks')[0].checked = (window.localStorage.getItem("animate") === "true");
+	$('#animatedLocks')[0].checked = (window.localStorage.getItem("animate") === "true");
 }
 function saveOptions() {
-	window.localStorage.setItem("animate", x$('#animatedLocks')[0].checked);
+	window.localStorage.setItem("animate", $('#animatedLocks')[0].checked);
 }
 
 function initApp() {
@@ -31,7 +23,7 @@ function initApp() {
 	};
 
 	if (typeof(device) !== "undefined") {
-		x$('#phoneGapVersion').html('version '+ device.phonegap);
+		$('#phoneGapVersion').html('version '+ device.phonegap);
 		var element = document.getElementById('deviceProperties');
 		if (element) {
 			element.innerHTML =
@@ -42,35 +34,9 @@ function initApp() {
 		}
 	}
 
-	x$('#btnPlay').on(activity, function () {
-		display('#play');
-	});
-	x$('#btnOptions').on(activity, function () {
-		loadOptions();
-		display('#options');
-	});
-	x$('#btnAbout').on(activity, function () {
-		display('#info');
-	});
-	x$('#infoToHome').on(activity, function () {
-		display('#menu');
-	});
-
-	x$('#btnPlayToMenu').on(activity, function() {
-		display('#menu');
-	});
-	x$('#btnReset').on(activity, function() {
+	$('#btnReset').bind(activity, function() {
 		GAME.reset();
 		GAME.resetLocks();
-		display('#play');
-	});
-
-	x$('#btnSaveOptions').on(activity, function() {
-		saveOptions();
-		display('#menu');
-	});
-	x$('#btnCancelOptions').on(activity, function() {
-		display('#menu');
 	});
 
 	document.addEventListener("menubutton", onMenuKeyDown, false);
