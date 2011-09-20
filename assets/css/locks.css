@@ -18,11 +18,19 @@ td.fourLocks{height:55px;width:55px;}
 .lock.fourLocks{width:55px;height:15px;}
 
 .rotate90 {
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -transition: all 200ms ease-in-out;
+
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -transform: rotate(90deg);
 }
 .rotate0 {
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -transition: all 200ms ease-in-out;
+
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -transform: rotate(0deg);
