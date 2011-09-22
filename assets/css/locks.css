@@ -9,13 +9,13 @@ h1 {
 td{background: #4C606B;}
 .lock{background-color: #fff;text-align:center;cursor:pointer;}
 
-#game.threeLocks{width:245px;}
-td.threeLocks{height:75px;width:75px;}
-.lock.threeLocks{width:75px;height:20px;}
+#game.threeLocks{width:240px;}
+.threeLocks td{height:70px;width:70px;}
+.lock.threeLocks{width:70px;height:20px;}
 
-#game.fourLocks{width:246px;display:none;}
-td.fourLocks{height:55px;width:55px;}
-.lock.fourLocks{width:55px;height:15px;}
+#game.fourLocks{width:240px;display:none;}
+.fourLocks td{height:50px;width:50px;}
+.lock.fourLocks{width:50px;height:18px;}
 
 .rotate90 {
     -webkit-transition: all 200ms ease-in-out;
