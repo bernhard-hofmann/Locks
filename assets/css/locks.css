@@ -23,19 +23,11 @@ td{background: #4C606B;}
 .lock.fourLocks{width:100%;height:15px;}
 
 .rotate90 {
-    -webkit-transition: all 200ms ease-in-out;
-    -moz-transition: all 200ms ease-in-out;
-    -transition: all 200ms ease-in-out;
-
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -transform: rotate(90deg);
 }
 .rotate0 {
-    -webkit-transition: all 200ms ease-in-out;
-    -moz-transition: all 200ms ease-in-out;
-    -transition: all 200ms ease-in-out;
-
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -transform: rotate(0deg);
