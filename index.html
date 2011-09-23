@@ -40,6 +40,7 @@
 	<div data-role="page" id="play">
 		<div data-role="content">
 		<div id="gameboard">
+			<center>
 			<div id="game" class="threeLocks">
 				<table border="2">
 					<tr>
@@ -87,6 +88,7 @@
 					</tr>
 				</table>
 			</div>
+			</center>
 		</div>
 		</div>
 	</div>
@@ -110,5 +112,23 @@
 
 	<script src="assets/js/locks.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	var
+		width = document.body.clientWidth / 4,
+		height = document.body.clientHeight / 4,
+		blockSize = Math.min(width, height);
+	$('.threeLocks td').css('height', blockSize+'px');
+	$('.threeLocks td').css('width', blockSize+'px');
+	$('.lock.threeLocks').css('width', blockSize+'px');
+	$('.lock.threeLocks').css('height', blockSize/5 +'px');
+
+	width = document.body.clientWidth / 5;
+	height = document.body.clientHeight / 5;
+	blockSize = Math.min(width, height);
+	$('.fourLocks td').css('height', blockSize+'px');
+	$('.fourLocks td').css('width', blockSize+'px');
+	$('.lock.fourLocks').css('width', blockSize+'px');
+	$('.lock.fourLocks').css('height', blockSize/5 +'px');
+	</script>
 </body>
 </html>
