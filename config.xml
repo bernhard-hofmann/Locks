@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.bluebear.lockpuzzle" version="2.9.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/2.9" id="com.bluebear.lockpuzzle" version="2.9.0">
 	<name>Locks</name>
 	<description>Simple lock puzzle</description>
 	<author href="http://www.bluebearsoftware.co.uk" email="admin@bluebearsoftware.co.uk">Bernhard Hofmann</author>
@@ -11,7 +11,9 @@
 		<gap:platform name="android" minVersion="2.1" />
 	</gap:platforms>
 
-	<feature name="http://api.phonegap.com/1.0/notification"/>
+	<feature name="Notification">
+		<param name="android-package" value="org.apache.cordova.Notification" />
+	</feature>
 
 	<preference name="orientation" value="portrait" />
 </widget>
