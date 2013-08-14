@@ -9,7 +9,7 @@ var UTIL = (function(my) {
 var GAME = (function (my) { 
 	my.toggles = 0;
 	my.animate = function() {
-		var isAnimated = (window.localStorage.getItem("animate") === "true");
+		var isAnimated = true;//(window.localStorage.getItem("animate") === "true");
 		return isAnimated;
 	};
 
