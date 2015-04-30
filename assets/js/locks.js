@@ -82,10 +82,11 @@ var GAME = (function (my) {
 
 	my.showWon = function() {
 		GAME.toggles += 1;
+		bizt();
 		if (typeof(navigator) !== "undefined" && typeof(navigator.notification) !== "undefined") {
 			navigator.notification.alert('Well done!', GAME.alertDismissed, 'You did it!', 'Reset');
 		} else {
-			alert('Well done! You did it!');
+			alert('Well done!');
 			GAME.resetLocks('fourLocks');
 		}
 	};
@@ -97,7 +98,8 @@ var GAME = (function (my) {
 		}
 		if ($(classText).length === 0) {
 			$('.rotate90').css({'background-color':'#0f0'});
-			setTimeout(GAME.showWon, 100);
+			$('.rotate90animated').css({'background-color':'#0f0'});
+			setTimeout(GAME.showWon, 500);
 		}
 	};
 
