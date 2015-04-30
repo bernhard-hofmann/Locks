@@ -10,10 +10,10 @@
 		<icon src="icon.png" density="hdpi" />
 		<icon src="icon.png" density="xhdpi" />
 		
-		<splash src="icon.png" density="port-hdpi"/>
-		<splash src="icon.png" density="port-ldpi"/>
-		<splash src="icon.png" density="port-mdpi"/>
-		<splash src="icon.png" density="port-xhdpi"/>
+		<splash src="splash.png" density="port-hdpi"/>
+		<splash src="splash.png" density="port-ldpi"/>
+		<splash src="splash.png" density="port-mdpi"/>
+		<splash src="splash.png" density="port-xhdpi"/>
 	</platform>
 
 	<feature name="Notification">
