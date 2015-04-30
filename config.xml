@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/2.9" id="com.bluebear.lockpuzzle" version="2.9.0">
+<widget id="io.cordova.hellocordova">
 	<name>Locks</name>
 	<description>Simple lock puzzle</description>
 	<author href="http://www.bluebearsoftware.co.uk" email="admin@bluebearsoftware.co.uk">Bernhard Hofmann</author>
