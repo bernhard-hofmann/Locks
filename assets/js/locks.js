@@ -119,20 +119,21 @@ var GAME = (function (my) {
 GAME.resetLocks();
 
 
-$('.lock').bind(GAME.activity, function() {
-	var cellid = this.id;
+$('.lock').parent().bind(GAME.activity, function() {
+	var cellid = this.childNodes[0].id;
+	var that = $('#'+cellid);
 	// Identify the row and column
-	var row = $(this).attr('row');
-	var col = $(this).attr('col');
+	var row = that.attr('row');
+	var col = that.attr('col');
 	// Toggle every cell in the row, and every cell in the column
 	$('.lock[row="' + row + '"]').each(function() {
-		GAME.toggle($(this));
+		if (this.id !== that.attr('id')) {
+			GAME.toggle($(this));
+		}
 	});
 	$('.lock[col="' + col + '"]').each(function() {
 		GAME.toggle($(this));
 	});
-	// Toggle the cell clicked as well
-	GAME.toggle($(this));
 
 	GAME.checkIfWon();
 });
