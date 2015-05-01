@@ -5,19 +5,19 @@
 	<author href="http://www.bluebearsoftware.co.uk" email="admin@bluebearsoftware.co.uk">Bernhard Hofmann</author>
 
  	<platform name="android">
-		<icon src="/assets/img/icon/Locks icon 192.png" density="xxxhdpi" />
-		<icon src="/assets/img/icon/Locks icon 144.png" density="xxhdpi" />
-		<icon src="/assets/img/icon/Locks icon 96.png" density="xhdpi" />
-		<icon src="/assets/img/icon/Locks icon 72.png" density="hdpi" />
-		<icon src="/assets/img/icon/Locks icon 48.png" density="mdpi" />
-		<icon src="/assets/img/icon/Locks icon 36.png" density="ldpi" />
+		<icon src="assets/img/icon/Locks icon 192.png" density="xxxhdpi" />
+		<icon src="assets/img/icon/Locks icon 144.png" density="xxhdpi" />
+		<icon src="assets/img/icon/Locks icon 96.png" density="xhdpi" />
+		<icon src="assets/img/icon/Locks icon 72.png" density="hdpi" />
+		<icon src="assets/img/icon/Locks icon 48.png" density="mdpi" />
+		<icon src="assets/img/icon/Locks icon 36.png" density="ldpi" />
 
-		<splash src="/assets/img/splash/splash.png" density="port-xxxhdpi"/>
-		<splash src="/assets/img/splash/splash.png" density="port-xxhdpi"/>
-		<splash src="/assets/img/splash/splash.png" density="port-xhdpi"/>
-		<splash src="/assets/img/splash/splash.png" density="port-hdpi"/>
-		<splash src="/assets/img/splash/splash.png" density="port-mdpi"/>
-		<splash src="/assets/img/splash/splash.png" density="port-ldpi"/>
+		<splash src="assets/img/splash/splash.png" density="port-xxxhdpi"/>
+		<splash src="assets/img/splash/splash.png" density="port-xxhdpi"/>
+		<splash src="assets/img/splash/splash.png" density="port-xhdpi"/>
+		<splash src="assets/img/splash/splash.png" density="port-hdpi"/>
+		<splash src="assets/img/splash/splash.png" density="port-mdpi"/>
+		<splash src="assets/img/splash/splash.png" density="port-ldpi"/>
 	</platform>
 
 	<feature name="Notification">
