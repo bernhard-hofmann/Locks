@@ -5,10 +5,10 @@
 	<author href="http://www.bluebearsoftware.co.uk" email="admin@bluebearsoftware.co.uk">Bernhard Hofmann</author>
 
  	<platform name="android">
-		<icon src="icon144.png" density="xxhdpi" />
-		<icon src="icon96.png" density="xhdpi" />
-		<icon src="icon72.png" density="hdpi" />
-		<icon src="icon48.png" density="mdpi" />
+		<icon src="icon.png" density="xhdpi" />
+		<icon src="icon.png" density="hdpi" />
+		<icon src="icon.png" density="mdpi" />
+		<icon src="icon.png" density="ldpi" />
 
 		<splash src="assets/img/splash/splash.png" />
 	</platform>
