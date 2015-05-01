@@ -5,12 +5,12 @@
 	<author href="http://www.bluebearsoftware.co.uk" email="admin@bluebearsoftware.co.uk">Bernhard Hofmann</author>
 
  	<platform name="android">
-		<icon src="assets/img/icon/Locks icon 192.png" density="xxxhdpi" />
-		<icon src="assets/img/icon/Locks icon 144.png" density="xxhdpi" />
-		<icon src="assets/img/icon/Locks icon 96.png" density="xhdpi" />
-		<icon src="assets/img/icon/Locks icon 72.png" density="hdpi" />
-		<icon src="assets/img/icon/Locks icon 48.png" density="mdpi" />
-		<icon src="assets/img/icon/Locks icon 36.png" density="ldpi" />
+		<icon src="assets/img/icon/LocksIcon192.png" density="xxxhdpi" />
+		<icon src="assets/img/icon/LocksIcon144.png" density="xxhdpi" />
+		<icon src="assets/img/icon/LocksIcon96.png" density="xhdpi" />
+		<icon src="assets/img/icon/LocksIcon72.png" density="hdpi" />
+		<icon src="assets/img/icon/LocksIcon48.png" density="mdpi" />
+		<icon src="assets/img/icon/LocksIcon36.png" density="ldpi" />
 
 		<splash src="assets/img/splash/splash.png" density="port-xxxhdpi"/>
 		<splash src="assets/img/splash/splash.png" density="port-xxhdpi"/>
