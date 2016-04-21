@@ -74,6 +74,9 @@ var GAME = (function (my) {
 			lock.removeClass(zeroClass);
 			lock.addClass(ninetyClass);
 		}
+
+		var audio = new Audio('assets/audio/snap.mp3');
+		audio.play();
 	}
 
 	my.alertDismissed = function() {
@@ -81,6 +84,9 @@ var GAME = (function (my) {
 	};
 
 	my.showWon = function() {
+		var audio = new Audio('assets/audio/done.mp3');
+		audio.play();
+
 		GAME.toggles += 1;
 		bizt();
 		if (typeof(navigator) !== "undefined" && typeof(navigator.notification) !== "undefined") {
