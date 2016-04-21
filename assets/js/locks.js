@@ -57,6 +57,8 @@ var GAME = (function (my) {
 		}
 
 		$('#game.'+ GAME.boardClass).css({'display':'block'});
+		GAME.clickCount = 0;
+		$('#moveCount').text(GAME.clickCount);
 	};
 
 	my.toggle = function(lock) {
@@ -127,6 +129,8 @@ GAME.resetLocks();
 
 
 $('.lock').parent().bind(GAME.activity, function() {
+	GAME.clickCount++;
+	$('#moveCount').text(GAME.clickCount);
 	GAME.clickSound.play();
 
 	var cellid = this.childNodes[0].id;
