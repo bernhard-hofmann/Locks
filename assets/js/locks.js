@@ -81,8 +81,7 @@ var GAME = (function (my) {
 	};
 
 	my.showWon = function() {
-		var audio = new Audio('assets/audio/done.mp3');
-		audio.play();
+		GAME.levelCompleteSound.play();
 
 		GAME.toggles += 1;
 		bizt();
@@ -118,6 +117,9 @@ var GAME = (function (my) {
 		GAME.resetLocks();
 	};
 
+	my.levelCompleteSound = new Audio('assets/audio/done.mp3');
+	my.clickSound = new Audio('assets/audio/snap.mp3');
+
 	return my;
 }(GAME || {}));
 
@@ -125,8 +127,7 @@ GAME.resetLocks();
 
 
 $('.lock').parent().bind(GAME.activity, function() {
-	var audio = new Audio('assets/audio/snap.mp3');
-	audio.play();
+	GAME.clickSound.play();
 
 	var cellid = this.childNodes[0].id;
 	var that = $('#'+cellid);
