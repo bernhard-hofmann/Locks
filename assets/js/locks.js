@@ -74,9 +74,6 @@ var GAME = (function (my) {
 			lock.removeClass(zeroClass);
 			lock.addClass(ninetyClass);
 		}
-
-		var audio = new Audio('assets/audio/snap.mp3');
-		audio.play();
 	}
 
 	my.alertDismissed = function() {
@@ -128,6 +125,9 @@ GAME.resetLocks();
 
 
 $('.lock').parent().bind(GAME.activity, function() {
+	var audio = new Audio('assets/audio/snap.mp3');
+	audio.play();
+
 	var cellid = this.childNodes[0].id;
 	var that = $('#'+cellid);
 	// Identify the row and column
